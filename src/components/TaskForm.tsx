@@ -22,36 +22,35 @@ const TaskForm: React.FC<Props> = ({ onTaskCreated }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="p-fluid p-formgrid p-grid gap-4">
-            {/* Título */}
-            <div className="p-field p-col-12 p-md-4 p-mb-3">
-                <InputText
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Título"
-                    required
-                    className="w-full"
-                />
-            </div>
+        <form onSubmit={handleSubmit} className="p-fluid p-formgrid p-grid">
+            {/* Inputs agrupados */}
+            <div className="flex flex-wrap w-full gap-4">
+                <div className="p-field flex-1 min-w-[200px]">
+                    <InputText
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Título"
+                        required
+                        className="w-full"
+                    />
+                </div>
 
-            {/* Descripción */}
-            <div className="p-field p-col-12 p-md-4 p-mb-3">
-                <InputText
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Descripción"
-                    className="w-full"
-                />
-            </div>
+                <div className="p-field flex-1 min-w-[200px]">
+                    <InputText
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder="Descripción"
+                        className="w-full"
+                    />
+                </div>
 
-            {/* Botón */}
-            <div className="p-field p-col-12 p-md-2 flex items-center">
-                <Button
-                    label="Agregar tarea"
-                    icon="pi pi-plus"
-                    type="submit"
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white p-2"
-                />
+                <div className="p-field min-w-[150px] flex items-center">
+                    <Button
+                        label="Agregar tarea"
+                        icon="pi pi-plus"
+                        type="submit"
+                    />
+                </div>
             </div>
         </form>
     );

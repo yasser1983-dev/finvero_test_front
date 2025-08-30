@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
     return (
         <Layout>
-            <Card title="Crear nueva tarea" className="mb-6 bg-white shadow-md p-4">
+            <Card title="Crear nueva tarea" className="mb-6 bg-white shadow-md p-6 w-full max-w-3xl">
                 <TaskForm onTaskCreated={fetchTasks} />
             </Card>
             <TaskTable tasks={tasks} onUpdate={fetchTasks} />

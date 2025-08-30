@@ -23,11 +23,11 @@ const TaskTable: React.FC<Props> = ({ tasks, onUpdate }) => {
 
     return (
         <DataTable value={tasks} responsiveLayout="scroll">
-            <Column field="title" header="Title" />
-            <Column field="description" header="Description" />
+            <Column field="title" header="Título" />
+            <Column field="description" header="Descripción" />
             <Column
                 field="completed"
-                header="Completed"
+                header="Completado"
                 body={(task: Task) => (
                     <Button
                         label={task.completed ? "Yes" : "No"}
@@ -37,7 +37,7 @@ const TaskTable: React.FC<Props> = ({ tasks, onUpdate }) => {
                 )}
             />
             <Column
-                header="Actions"
+                header="Acción"
                 body={(task: Task) => (
                     <Button icon="pi pi-trash" className="p-button-danger" onClick={() => removeTask(task)} />
                 )}

@@ -4,6 +4,12 @@ import TaskTable from "./components/TaskTable";
 import { getTasks } from "./api/tasks";
 import type { Task } from "./types/task";
 import Layout from "./components/Layout";
+import "primereact/resources/themes/saga-blue/theme.css";   // Tema
+import "primereact/resources/primereact.min.css";           // Componentes
+import "primeicons/primeicons.css";                         // Íconos
+import "primeflex/primeflex.css";
+import "./index.css";
+import {Card} from "primereact/card";
 
 const App: React.FC = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -19,8 +25,9 @@ const App: React.FC = () => {
 
     return (
         <Layout>
-            <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
-            <TaskForm onTaskCreated={fetchTasks} />
+            <Card title="Crear nueva tarea" className="mb-6 bg-white shadow-md p-4">
+                <TaskForm onTaskCreated={fetchTasks} />
+            </Card>
             <TaskTable tasks={tasks} onUpdate={fetchTasks} />
         </Layout>
     );
